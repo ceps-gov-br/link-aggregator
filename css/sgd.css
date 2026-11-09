@@ -1,0 +1,171 @@
+/*
+* Tema SGD — cores e fonte do Padrão Digital de Governo (gov.br/ds)
+* Carregado depois do style.css do LittleLink: o que está aqui sobrescreve o padrão.
+*/
+
+:root {
+  --gov-azul: #1351B4;        /* blue-warm-vivid-70 (cor primária) */
+  --gov-azul-hover: #0C326F;  /* blue-warm-vivid-80 */
+  --gov-azul-escuro: #071D41; /* blue-warm-vivid-90 */
+  --gov-texto: #333333;
+  --gov-foco: #C2850C;        /* cor de foco do DS */
+}
+
+body {
+  font-family: "rawline", "Raleway", system-ui, sans-serif;
+  color: var(--gov-texto);
+  background-color: #ffffff;
+}
+
+/* Título e subtítulo */
+h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--gov-azul-escuro);
+  letter-spacing: 0;
+  hyphens: manual;
+  margin-bottom: var(--spacing-xs);
+}
+
+.container p {
+  font-size: var(--scale-0);
+  margin-bottom: var(--spacing-l);
+}
+
+h2 {
+  font-size: var(--scale-0);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gov-azul-escuro);
+  margin: var(--spacing-l) 0 var(--spacing-s);
+}
+
+/* Botões: formato "pílula" do DS gov.br */
+.button {
+  width: 100%;
+  max-width: 24rem;
+  border-radius: 100em;
+  font-weight: 600;
+  hyphens: manual;
+}
+
+.button.button-gov {
+  --button-text: #ffffff;
+  --button-background: var(--gov-azul);
+  --button-border: 1px solid var(--gov-azul);
+}
+
+.button.button-gov:hover {
+  --button-background: var(--gov-azul-hover);
+}
+
+.button:hover {
+  filter: brightness(1.08);
+}
+
+/* Botões de referência: título + descrição, alinhados à esquerda */
+.button.button-ref {
+  justify-content: flex-start;
+  text-align: left;
+  border-radius: 1rem;
+  padding: 0.875rem 1.25rem;
+}
+
+.button-ref .icon-fa {
+  font-size: 1.4rem;
+  width: 1.75rem;
+  margin-right: 1rem;
+}
+
+.ref-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.ref-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.ref-desc {
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  opacity: 0.92;
+}
+
+/* Ícones Font Awesome 5 dentro dos botões */
+.icon-fa {
+  width: 1.25rem;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Foco visível para navegação por teclado (padrão do DS) */
+a:focus-visible {
+  outline: 4px dashed var(--gov-foco);
+  outline-offset: 4px;
+}
+
+footer {
+  font-size: 0.875rem;
+  color: #555555;
+}
+
+@media (max-width: 34.375rem) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  .button {
+    font-size: 1rem;
+  }
+}
+
+/* Capa no topo da página */
+.capa {
+  max-width: 60rem;           /* 960px */
+  margin: 0 auto;
+}
+
+.capa img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 48rem) {   /* telas a partir de 768px: capa com margem e cantos arredondados */
+  .capa {
+    padding: var(--spacing-m) var(--spacing-m) 0;
+  }
+  .capa img {
+    border-radius: 1rem;
+  }
+}
+
+/* Com a capa, o conteúdo começa mais perto do topo */
+.container {
+  padding-top: var(--spacing-l);
+}
+
+.container p.subtitulo {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gov-azul-escuro);
+  margin-bottom: var(--spacing-l);
+}
+
+/* Esconde da tela, mas mantém para leitores de tela */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
